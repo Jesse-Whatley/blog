@@ -1,0 +1,3 @@
+
+Migrations
+    * python3 manage.py makemigrations posts --empty
