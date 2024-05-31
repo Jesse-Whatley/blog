@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Posts{% endblock title %}
+
+{% block content %}
+<h1>Posts</h1>
+{% for post in post_list %}
+<div class="card">
+        <a href="{% url 'detail' post.id %}" class="card-link">Continue reading...</a>
+        <div class="card-body">
+            <h4 class="card-title">{{ post.title }}</h4>
+            <h5 class="card-subtitle mb-2 text-body-secondary">{{ post.subtitle }}</h5>
+            <h6 class="mb-2">{{ post.author }}</h6>
+            <p class="card-text">{{ post.body|truncatechars:128 }}</p>
+            {% if user.is_authenticated %}
+                {% if post.author == user %}
+                <a href="{% url 'edit' post.id %}" class="card-link">Edit</a>
+                <a href="{% url 'delete' post.id %}" class="card-link">Delete</a>
+                <h6 class="mb-2">{{ post.status }}</h6>
+            {% endif %}    
+        </div>
+    </div>
+{% endfor %}
+{% endblock content %}
