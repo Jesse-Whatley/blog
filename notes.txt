@@ -2,3 +2,34 @@
 Migrations
     * python3 manage.py makemigrations posts --empty
 
+to create admin user 
+    * python3 manage.py createsuperuser
+    * username: jesse
+    * email: crackerculturecollections@gmail.com
+    * password: Letssmoke1!!
+
+how to get password hash
+    * echo "jesse" | sha256sum
+
+Email backend
+    * go to config
+        * settings.py
+            * EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"      # this is for on the console only 
+            * EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"         # this is for on all email services
+
+
+how to override templates
+    * go to config == urls.py
+        * go to the url path you are looking for
+            * right click on the view and look up definition (ex: PasswordResetView)
+                * look up template_name == create template name exactly how it's written
+
+
+bootstrap install crispy forms 
+    * 
+
+
+heroku link 
+    * https://www.heroku.com/
+how to install
+    * curl https://cli-assets.heroku.com/install-ubuntu.sh | sh

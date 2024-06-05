@@ -18,6 +18,7 @@
                 <a href="{% url 'edit' post.id %}" class="card-link">Edit</a>
                 <a href="{% url 'delete' post.id %}" class="card-link">Delete</a>
                 <h6 class="mb-2">{{ post.status }}</h6>
+                {% endif %}
             {% endif %}    
         </div>
     </div>

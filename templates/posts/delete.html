@@ -8,6 +8,7 @@
 <p>Are you sure you want to delete "{{ post.title }}"?</p>
 <form mehtod="POST">
     {% csrf_token %}
+    {{ form.as_p}}
     <input type="submit" class="btn btn-danger" value="delete">
 </form>
 {% endblock content %}
